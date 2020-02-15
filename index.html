@@ -15,6 +15,28 @@
       <button role="button" class="convert-button" id="mp4">mp4</button>
       <button role="button" class="convert-button" id="mp3">mp3</button>
     </main>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+      let mp3Btn = document.getElementById('mp3')
+      let	mp4Btn = document.getElementById('mp4')
+      let URLinput = document.querySelector('.URL-input')
+
+      mp3Btn.addEventListener('click', () => {
+        redirectMp3(URLinput.value);
+      });
+
+      mp4Btn.addEventListener('click', () => {
+        redirectMp4(URLinput.value);
+      });
+
+      function redirectMp3(query) {
+        let url = window.location.href
+        window.location.href = `${url}mp3?url=${query}`;
+      }
+
+      function redirectMp4(query) {
+        let url = window.location.href
+        window.location.href = `${url}mp4?url=${query}`;
+      }
+    </script>
   </body>
 </html>
